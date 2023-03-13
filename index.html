@@ -170,7 +170,7 @@
           
     <div id="resultado3" style="margin-top: 60px; display:none;">  
 		   <div class="text-center text-success mt-4">
-		   <p style="   color: #000;    margin-bottom: 0px;">Obtenido renovando mensualmente </p>
+		   <p style="   color: #000;    margin-bottom: 0px;">Obtenido renovando mensualmente en un año</p>
 		    <h2 id="resultadoTotal3">$0</h2>
 		  </div>
 		  
@@ -270,6 +270,126 @@
   
   </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    <!-- tab 4 -->
+    <div class="tab-pane fade" id="calculo-ahorro" role="tabpanel" aria-labelledby="calculo-ahorro-tab">
+      
+      <p>Este formulario sirve para calcular la ganancia en un año para un plazo fijo renovado mensualmente adicionando un ahorro por fuera del plazo fijo </p>
+        
+        <div class="form-group">
+            <label for="monto">Monto inicial:</label>
+            <input type="number" class="form-control" id="monto4" name="monto4" placeholder="$">
+          </div>
+		<div class="form-group">
+            <label for="tasa">Tasa anual (%):</label>
+            <input type="number" class="form-control" id="tasa4" name="tasa4" placeholder="75" value="75" placeholder="%">
+          </div>  
+           <div class="form-group">
+            <label for="monto">Ahorro:</label>
+            <input type="number" class="form-control" id="ahorro" name="ahorro" placeholder="$">
+          </div>       
+          
+          <button class="btn btn-primary float-right" onclick="calcular4()">Calcular</button>
+          
+          
+    <div id="resultado4" style="margin-top: 60px; display:none;">  
+		   <div class="text-center text-success mt-4">
+		   <p style="   color: #000;    margin-bottom: 0px;">Obtenido renovando mensualmente en un año</p>
+		    <h2 id="resultadoTotal6">$0</h2>
+		  </div>
+		  
+		  <div class="text-center mt-2">
+		    <p class="text-muted" id="desarrollo6">$0 inversión + $0 ganancia</p>
+		  </div>
+		  
+		  
+		  <div class="table-responsive mt-4">
+		    <table class="table">
+		      <thead>
+		        <tr>
+		          <th>Mes</th>
+		          <th>Monto</th>
+		          <th>Ganancia</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td>1</td>
+		          <td id="t1a">$0</td>
+		          <td id="g1a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>2</td>
+		          <td id="t2a">$0</td>
+		          <td id="g2a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>3</td>
+		          <td id="t3a">$0</td>
+		          <td id="g3a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>4</td>
+		          <td id="t4a">$0</td>
+		          <td id="g4a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>5</td>
+		          <td id="t5a">$0</td>
+		          <td id="g5a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>6</td>
+		          <td id="t6a">$0</td>
+		          <td id="g6a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>7</td>
+		          <td id="t7a">$0</td>
+		          <td id="g7a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>8</td>
+		          <td id="t8a">$0</td>
+		          <td id="g8a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>9</td>
+		          <td id="t9a">$0</td>
+		          <td id="g9a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>10</td>
+		          <td id="t10a">$0</td>
+		          <td id="g10a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>11</td>
+		          <td id="t11a">$0</td>
+		          <td id="g11a">$0</td>
+		        </tr>
+		        <tr>
+		          <td>12</td>
+		          <td id="t12a">$0</td>
+		          <td id="g12a">$0</td>
+		        </tr>
+		      </tbody>
+		    </table>
+		  </div>  
+  
+  </div>
+    </div>
+    
+    
+    
+    
+    
     
     
     
@@ -490,6 +610,111 @@ function calcular3(){
 	  
 	  document.getElementById("t12").innerHTML = '$'+s12.toLocaleString('es-ES', opciones);
 	  document.getElementById("g12").innerHTML = '$'+r12.toLocaleString('es-ES', opciones);
+}
+
+
+
+
+function calcular4(){
+	// Obtener los valores de los elementos HTML
+	  var tasa = document.getElementById("tasa4").value;
+	  var monto = document.getElementById("monto4").value;
+	  var ahorro = document.getElementById("ahorro").value;
+	  
+	  var tasaNum = Number(tasa);
+	  var tasa30=tasaNum/12;
+	  
+	  // Convertir el valor de 'monto' a número
+	  var montoNum = Number(monto);
+	  var ahorroNum = Number(ahorro);
+	  
+	
+
+	  // Realizar el cálculo
+	  var r1 = montoNum * tasa30/100;
+	  var s1 = montoNum +r1+ahorroNum;
+	  
+	  var r2 = s1 * tasa30/100;
+	  var s2 = s1 +r2+ahorroNum;
+	  
+	  var r3 = s2 * tasa30/100;
+	  var s3 = s2 +r3+ahorroNum;
+	  
+	  var r4 = s3 * tasa30/100;
+	  var s4 = s3 +r4+ahorroNum;
+	  
+	  var r5 = s4 * tasa30/100;
+	  var s5 = s4 +r5+ahorroNum;
+	  
+	  var r6 = s5 * tasa30/100;
+	  var s6 = s5 +r6+ahorroNum;
+	  
+	  var r7 = s6 * tasa30/100;
+	  var s7 = s6 +r7+ahorroNum;
+	  
+	  var r8 = s7 * tasa30/100;
+	  var s8 = s7 +r8+ahorroNum;
+	  
+	  var r9 = s8 * tasa30/100;
+	  var s9 = s8 +r9+ahorroNum;
+	  
+	  var r10 = s9 * tasa30/100;
+	  var s10 = s9 +r10+ahorroNum;
+	  
+	  var r11 = s10 * tasa30/100;
+	  var s11 = s10 +r11+ahorroNum;
+	  
+	  var r12 = s11 * tasa30/100;
+	  var s12 = s11 +r12+ahorroNum;
+	  
+	  var gananciamensual=s12-montoNum;
+
+	  
+	  var resultadoElem = document.getElementById("resultado4");
+	  resultadoElem.style.display = "block";
+	  
+	  var resultadoTotalElem = document.getElementById("resultadoTotal6");
+	  resultadoTotalElem.innerHTML = '$'+s12.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem = document.getElementById("desarrollo6");
+	  desarrolloElem.innerHTML = '$'+montoNum.toLocaleString('es-ES', opciones)+' inversión + $'+gananciamensual.toLocaleString('es-ES', opciones)+' ganancia';
+	  
+	  
+	  document.getElementById("t1a").innerHTML = '$'+s1.toLocaleString('es-ES', opciones);
+	  document.getElementById("g1a").innerHTML = '$'+r1.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t2a").innerHTML = '$'+s2.toLocaleString('es-ES', opciones);
+	  document.getElementById("g2a").innerHTML = '$'+r2.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t3a").innerHTML = '$'+s3.toLocaleString('es-ES', opciones);
+	  document.getElementById("g3a").innerHTML = '$'+r3.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t4a").innerHTML = '$'+s4.toLocaleString('es-ES', opciones);
+	  document.getElementById("g4a").innerHTML = '$'+r4.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t5a").innerHTML = '$'+s5.toLocaleString('es-ES', opciones);
+	  document.getElementById("g5a").innerHTML = '$'+r5.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t6a").innerHTML = '$'+s6.toLocaleString('es-ES', opciones);
+	  document.getElementById("g6a").innerHTML = '$'+r6.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t7a").innerHTML = '$'+s7.toLocaleString('es-ES', opciones);
+	  document.getElementById("g7a").innerHTML = '$'+r7.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t8a").innerHTML = '$'+s8.toLocaleString('es-ES', opciones);
+	  document.getElementById("g8a").innerHTML = '$'+r8.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t9a").innerHTML = '$'+s9.toLocaleString('es-ES', opciones);
+	  document.getElementById("g9a").innerHTML = '$'+r9.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t10a").innerHTML = '$'+s10.toLocaleString('es-ES', opciones);
+	  document.getElementById("g10a").innerHTML = '$'+r10.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t11a").innerHTML = '$'+s11.toLocaleString('es-ES', opciones);
+	  document.getElementById("g11a").innerHTML = '$'+r11.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t12a").innerHTML = '$'+s12.toLocaleString('es-ES', opciones);
+	  document.getElementById("g12a").innerHTML = '$'+r12.toLocaleString('es-ES', opciones);
 }
 </script>
 </body>
