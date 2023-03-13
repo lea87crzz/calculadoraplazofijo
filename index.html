@@ -1,18 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Calculadora de plazo fijo</title>
+  <meta charset="UTF-8">
+  <title>Calculadora de plazo fijo</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh3zq5t8TMEqbIgR6PmkkzYSaBk9wJdf5jfa"
+        crossorigin="anonymous">
 </head>
 <body>
-<h1>Calculadora de plazo fijo</h1>
-<div>
-Monto <input type="text" name="monto"><br/>
-Dias <select name="dias"><option value="30">30</option></select>
-<input type="submit" value="Calcular">
 
+<!-- Header -->
+<header class="bg-primary rounded">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-white text-center py-3">Calculadora de plazo fijo</h1>
+      </div>
+    </div>
+  </div>
+</header>
 
-</div>
+<!-- Formulario -->
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <form>
+          <div class="form-group">
+            <label for="monto">Monto:</label>
+            <input type="number" class="form-control" id="monto" name="monto">
+          </div>
+          <div class="form-group">
+            <label for="dias">Días:</label>
+            <select class="form-control" id="dias" name="dias">
+              <option value="30">30 días</option>
+              <option value="180">180 días</option>
+              <option value="365">365 días</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+      </div>
+      <div class="col-4">
+        <p>Espacio para publicidad</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
