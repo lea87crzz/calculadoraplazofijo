@@ -34,6 +34,12 @@
     <li class="nav-item">
       <a class="nav-link" id="calculo-resultado-tab" data-toggle="tab" href="#calculo-resultado" role="tab" aria-controls="calculo-resultado" aria-selected="false">Cálculo por resultado</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="calculo-resultado-tab" data-toggle="tab" href="#calculo-mensual" role="tab" aria-controls="calculo-mensual" aria-selected="false">Renovación mensual</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="calculo-resultado-tab" data-toggle="tab" href="#calculo-ahorro" role="tab" aria-controls="calculo-ahorro" aria-selected="false">Renovación+Ahorro</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="calculo-monto" role="tabpanel" aria-labelledby="calculo-monto-tab">
@@ -62,7 +68,7 @@
           
     <div id="resultado" style="margin-top: 60px; display:none;">  
    <div class="text-center text-success mt-4">
-    <h2 id="resultadoTotal">$10500</h2>
+    <h2 id="resultadoTotal">$0</h2>
   </div>
   
   <div class="text-center mt-2">
@@ -102,6 +108,8 @@
   
   </div>
     </div>
+    
+    <!-- tab 2 -->
     <div class="tab-pane fade" id="calculo-resultado" role="tabpanel" aria-labelledby="calculo-resultado-tab">
       
       <p>Ingrese la ganancia buscada para determinado periodo de tiempo y se le indicará el monto que debe invertir para obtenerla</p>
@@ -137,9 +145,132 @@
   </div>
   
   </div>
-
-
     </div>
+    
+    
+    
+    <!-- tab 3 -->
+    <div class="tab-pane fade" id="calculo-mensual" role="tabpanel" aria-labelledby="calculo-mensual-tab">
+      
+      <p>Renovando mensualmente el plazo fijo, sumando la ganancia a la nueva inversión se puede obtener una mejor ganancia final comparado con hacer un plazo fijo anual. </p>
+        
+        <div class="form-group">
+            <label for="monto">Monto inicial:</label>
+            <input type="number" class="form-control" id="monto3" name="monto3" placeholder="$">
+          </div>
+		<div class="form-group">
+            <label for="tasa">Tasa anual (%):</label>
+            <input type="number" class="form-control" id="tasa3" name="tasa3" placeholder="75" value="75" placeholder="%">
+          </div>         
+          
+          <button class="btn btn-primary float-right" onclick="calcular3()">Calcular</button>
+          
+          
+    <div id="resultado3" style="margin-top: 60px; display:none;">  
+		   <div class="text-center text-success mt-4">
+		   <p style="   color: #000;    margin-bottom: 0px;">Obtenido renovando mensualmente </p>
+		    <h2 id="resultadoTotal3">$0</h2>
+		  </div>
+		  
+		  <div class="text-center mt-2">
+		    <p class="text-muted" id="desarrollo3">$0 inversión + $0 ganancia</p>
+		  </div>
+		  
+		  <div class="text-center text-danger mt-4">
+		   <p style="   color: #000;    margin-bottom: 0px;">Obtenido realizando un plazo fijo a 1 año </p>
+		    <h2 id="resultadoTotal4">$0</h2>
+		  </div>
+		  
+		  <div class="text-center mt-2">
+		    <p class="text-muted" id="desarrollo4">$0 inversión + $0 ganancia</p>
+		  </div>
+		  
+		  <div class="text-center text-warning mt-4">
+		   <p style="   color: #000;    margin-bottom: 0px;">Diferencia </p>
+		    <h2 id="resultadoTotal5">$0</h2>
+		  </div>
+		  
+		  
+		  
+		  <div class="table-responsive mt-4">
+		    <table class="table">
+		      <thead>
+		        <tr>
+		          <th>Mes</th>
+		          <th>Monto</th>
+		          <th>Ganancia</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td>1</td>
+		          <td id="t1">$0</td>
+		          <td id="g1">$0</td>
+		        </tr>
+		        <tr>
+		          <td>2</td>
+		          <td id="t2">$0</td>
+		          <td id="g2">$0</td>
+		        </tr>
+		        <tr>
+		          <td>3</td>
+		          <td id="t3">$0</td>
+		          <td id="g3">$0</td>
+		        </tr>
+		        <tr>
+		          <td>4</td>
+		          <td id="t4">$0</td>
+		          <td id="g4">$0</td>
+		        </tr>
+		        <tr>
+		          <td>5</td>
+		          <td id="t5">$0</td>
+		          <td id="g5">$0</td>
+		        </tr>
+		        <tr>
+		          <td>6</td>
+		          <td id="t6">$0</td>
+		          <td id="g6">$0</td>
+		        </tr>
+		        <tr>
+		          <td>7</td>
+		          <td id="t7">$0</td>
+		          <td id="g7">$0</td>
+		        </tr>
+		        <tr>
+		          <td>8</td>
+		          <td id="t8">$0</td>
+		          <td id="g8">$0</td>
+		        </tr>
+		        <tr>
+		          <td>9</td>
+		          <td id="t9">$0</td>
+		          <td id="g9">$0</td>
+		        </tr>
+		        <tr>
+		          <td>10</td>
+		          <td id="t10">$0</td>
+		          <td id="g10">$0</td>
+		        </tr>
+		        <tr>
+		          <td>11</td>
+		          <td id="t11">$0</td>
+		          <td id="g11">$0</td>
+		        </tr>
+		        <tr>
+		          <td>12</td>
+		          <td id="t12">$0</td>
+		          <td id="g12">$0</td>
+		        </tr>
+		      </tbody>
+		    </table>
+		  </div>  
+  
+  </div>
+    </div>
+    
+    
+    
   </div>  
   
   
@@ -239,6 +370,124 @@ function calcular2(){
 	  desarrolloElem.innerHTML = 'Para obtener una ganancia de + $'+montoNum.toLocaleString('es-ES', opciones)+' en '+dias+" dias.";
 	  
 	  
+}
+
+
+function calcular3(){
+	// Obtener los valores de los elementos HTML
+	  var tasa = document.getElementById("tasa3").value;
+	  var monto = document.getElementById("monto3").value;
+	  
+	  var tasaNum = Number(tasa);
+	  var tasa30=tasaNum/12;
+	  var tasa360=tasaNum;
+	  
+	  // Convertir el valor de 'monto' a número
+	  var montoNum = Number(monto);
+	  
+	
+
+	  // Realizar el cálculo
+	  var r1 = montoNum * tasa30/100;
+	  var s1 = montoNum +r1;
+	  
+	  var r2 = s1 * tasa30/100;
+	  var s2 = s1 +r2;
+	  
+	  var r3 = s2 * tasa30/100;
+	  var s3 = s2 +r3;
+	  
+	  var r4 = s3 * tasa30/100;
+	  var s4 = s3 +r4;
+	  
+	  var r5 = s4 * tasa30/100;
+	  var s5 = s4 +r5;
+	  
+	  var r6 = s5 * tasa30/100;
+	  var s6 = s5 +r6;
+	  
+	  var r7 = s6 * tasa30/100;
+	  var s7 = s6 +r7;
+	  
+	  var r8 = s7 * tasa30/100;
+	  var s8 = s7 +r8;
+	  
+	  var r9 = s8 * tasa30/100;
+	  var s9 = s8 +r9;
+	  
+	  var r10 = s9 * tasa30/100;
+	  var s10 = s9 +r10;
+	  
+	  var r11 = s10 * tasa30/100;
+	  var s11 = s10 +r11;
+	  
+	  var r12 = s11 * tasa30/100;
+	  var s12 = s11 +r12;
+	  
+	  var gananciamensual=s12-montoNum;
+	  
+	  var ranual= montoNum * tasa360/100;
+	  var sanual = montoNum +ranual;
+	  
+	  var diferencia=s12-sanual;
+	  
+	  var resultadoElem = document.getElementById("resultado3");
+	  resultadoElem.style.display = "block";
+	  
+	  var resultadoTotalElem = document.getElementById("resultadoTotal3");
+	  resultadoTotalElem.innerHTML = '$'+s12.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem = document.getElementById("desarrollo3");
+	  desarrolloElem.innerHTML = '$'+montoNum.toLocaleString('es-ES', opciones)+' inversión + $'+gananciamensual.toLocaleString('es-ES', opciones)+' ganancia';
+	  
+	  var resultadoTotalElem2 = document.getElementById("resultadoTotal4");
+	  resultadoTotalElem2.innerHTML = '$'+sanual.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem2 = document.getElementById("desarrollo4");
+	  desarrolloElem2.innerHTML = '$'+montoNum.toLocaleString('es-ES', opciones)+' inversión + $'+ranual.toLocaleString('es-ES', opciones)+' ganancia';
+	  
+	  
+	  var resultadoTotalElem3 = document.getElementById("resultadoTotal5");
+	  resultadoTotalElem3.innerHTML = '$'+diferencia.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem = document.getElementById("desarrollo2");
+	  desarrolloElem.innerHTML = 'Para obtener una ganancia de + $'+montoNum.toLocaleString('es-ES', opciones)+' en '+dias+" dias.";
+	  
+	  document.getElementById("t1").innerHTML = '$'+s1.toLocaleString('es-ES', opciones);
+	  document.getElementById("g1").innerHTML = '$'+r1.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t2").innerHTML = '$'+s2.toLocaleString('es-ES', opciones);
+	  document.getElementById("g2").innerHTML = '$'+r2.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t3").innerHTML = '$'+s3.toLocaleString('es-ES', opciones);
+	  document.getElementById("g3").innerHTML = '$'+r3.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t4").innerHTML = '$'+s4.toLocaleString('es-ES', opciones);
+	  document.getElementById("g4").innerHTML = '$'+r4.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t5").innerHTML = '$'+s5.toLocaleString('es-ES', opciones);
+	  document.getElementById("g5").innerHTML = '$'+r5.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t6").innerHTML = '$'+s6.toLocaleString('es-ES', opciones);
+	  document.getElementById("g6").innerHTML = '$'+r6.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t7").innerHTML = '$'+s7.toLocaleString('es-ES', opciones);
+	  document.getElementById("g7").innerHTML = '$'+r7.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t8").innerHTML = '$'+s8.toLocaleString('es-ES', opciones);
+	  document.getElementById("g8").innerHTML = '$'+r8.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t9").innerHTML = '$'+s9.toLocaleString('es-ES', opciones);
+	  document.getElementById("g9").innerHTML = '$'+r9.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t10").innerHTML = '$'+s10.toLocaleString('es-ES', opciones);
+	  document.getElementById("g10").innerHTML = '$'+r10.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t11").innerHTML = '$'+s11.toLocaleString('es-ES', opciones);
+	  document.getElementById("g11").innerHTML = '$'+r11.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t12").innerHTML = '$'+s12.toLocaleString('es-ES', opciones);
+	  document.getElementById("g12").innerHTML = '$'+r12.toLocaleString('es-ES', opciones);
 }
 </script>
 </body>
