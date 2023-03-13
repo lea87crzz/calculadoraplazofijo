@@ -9,13 +9,9 @@
 <body>
 
 <!-- Header -->
-<header class="bg-primary rounded">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-white text-center py-3">Calculadora de plazo fijo</h1>
-      </div>
-    </div>
+<header class="bg-primary py-3 rounded">
+  <div class="container d-flex align-items-center">
+    <h1 class="text-white">Calculadora de plazo fijo</h1>
   </div>
 </header>
 
@@ -23,22 +19,130 @@
 <section class="my-5">
   <div class="container">
     <div class="row">
-      <div class="col-8">
-        <form>
-          <div class="form-group">
-            <label for="monto">Monto:</label>
-            <input type="number" class="form-control" id="monto" name="monto">
+    
+    
+    
+      <div class="col-8 border rounded" style='padding-bottom: 15px;'>
+      
+      
+      
+      
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="position: relative;top: -42px;">
+    <li class="nav-item">
+      <a class="nav-link active" id="calculo-monto-tab" data-toggle="tab" href="#calculo-monto" role="tab" aria-controls="calculo-monto" aria-selected="true">Cálculo por monto</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="calculo-resultado-tab" data-toggle="tab" href="#calculo-resultado" role="tab" aria-controls="calculo-resultado" aria-selected="false">Cálculo por resultado</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="calculo-monto" role="tabpanel" aria-labelledby="calculo-monto-tab">
+    
+    
+    
+    	  <div class="form-group">
+            <label for="monto">Monto inicial:</label>
+            <input type="number" class="form-control" id="monto" name="monto" placeholder="$">
           </div>
+          <div class="form-group">
+            <label for="tasa">Tasa anual (%):</label>
+            <input type="number" class="form-control" id="tasa" name="tasa" placeholder="75" value="75" placeholder="%">
+          </div>
+          
           <div class="form-group">
             <label for="dias">Días:</label>
             <select class="form-control" id="dias" name="dias">
-              <option value="30">30 días</option>
-              <option value="180">180 días</option>
-              <option value="365">365 días</option>
+              <option value="30">1 mes (30 días)</option>
+              <option value="90">3 meses (90 días)</option>
+              <option value="360">1 año (360 días)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Calcular</button>
-        </form>
+          <button class="btn btn-primary float-right" onclick="calcular()">Calcular</button>
+          
+          
+    <div id="resultado" style="margin-top: 60px; display:none;">  
+   <div class="text-center text-success mt-4">
+    <h2 id="resultadoTotal">$10500</h2>
+  </div>
+  
+  <div class="text-center mt-2">
+    <p class="text-muted" id="desarrollo">$0 inversión + $0 ganancia</p>
+  </div>
+  
+  <div class="table-responsive mt-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Días</th>
+          <th>Monto</th>
+          <th>Ganancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>30</td>
+          <td id="t30">$0</td>
+          <td id="g30">$0</td>
+        </tr>
+        <tr>
+          <td>90</td>
+          <td id="t90">$0</td>
+          <td id="g90">$0</td>
+        </tr>
+        <tr>
+          <td>360</td>
+          <td id="t360">$0</td>
+          <td id="g360">$0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+  
+  
+  
+  </div>
+    </div>
+    <div class="tab-pane fade" id="calculo-resultado" role="tabpanel" aria-labelledby="calculo-resultado-tab">
+      
+      <p>Ingrese la ganancia buscada para determinado periodo de tiempo y se le indicará el monto que debe invertir para obtenerla</p>
+        
+        <div class="form-group">
+            <label for="monto">Ganancia buscada:</label>
+            <input type="number" class="form-control" id="monto2" name="monto2" placeholder="$">
+          </div>
+		<div class="form-group">
+            <label for="tasa">Tasa anual (%):</label>
+            <input type="number" class="form-control" id="tasa2" name="tasa2" placeholder="75" value="75" placeholder="%">
+          </div>
+          
+          <div class="form-group">
+            <label for="dias">Días:</label>
+            <select class="form-control" id="dias2" name="dias2">
+              <option value="30">1 mes (30 días)</option>
+              <option value="90">3 meses (90 días)</option>
+              <option value="360">1 año (360 días)</option>
+            </select>
+          </div>
+          <button class="btn btn-primary float-right" onclick="calcular2()">Calcular</button>
+          
+          
+    <div id="resultado2" style="margin-top: 60px; display:none;">  
+   <div class="text-center text-success mt-4">
+   <p style="   color: #000;    margin-bottom: 0px;">Usted debe ingresar un monto de</p>
+    <h2 id="resultadoTotal2">$10500</h2>
+  </div>
+  
+  <div class="text-center mt-2">
+    <p class="text-muted" id="desarrollo2">$0 inversión + $0 ganancia</p>
+  </div>
+  
+  </div>
+
+
+    </div>
+  </div>  
+  
+  
       </div>
       <div class="col-4">
         <p>Espacio para publicidad</p>
@@ -48,14 +152,94 @@
 </section>
 
 <!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+const opciones = { style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+
+function calcular(){
+	// Obtener los valores de los elementos HTML
+	  var tasa = document.getElementById("tasa").value;
+	  var monto = document.getElementById("monto").value;
+	  var dias = document.getElementById("dias").value;
+
+	  // Convertir el valor de 'monto' a número
+	  var tasaNum = Number(tasa);
+	  var tasa30=tasaNum/12;
+	  var tasa90=tasaNum/4;
+	  var tasa360=tasaNum;
+	  // Convertir el valor de 'monto' a número
+	  var montoNum = Number(monto);
+	  
+	  if(dias==30) tasaNum=tasaNum/12;
+	  else if(dias==90) tasaNum=tasaNum/4;
+
+	  // Realizar el cálculo
+	  var resultado = montoNum * tasaNum/100;
+	  var resultadoSuma = montoNum +resultado;
+
+	  // Mostrar el resultado en el elemento HTML 'resultado'
+	  var resultadoElem = document.getElementById("resultado");
+	  resultadoElem.style.display = "block";
+	  //resultadoElem.innerHTML = `El resultado es ${resultado}`;
+	  
+	  var resultadoTotalElem = document.getElementById("resultadoTotal");
+	  resultadoTotalElem.innerHTML = '$'+resultadoSuma.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem = document.getElementById("desarrollo");
+	  desarrolloElem.innerHTML = '$'+montoNum.toLocaleString('es-ES', opciones)+' inversión + $'+resultado.toLocaleString('es-ES', opciones)+' ganancia';
+	  
+	  //ganancia 30 dias
+	  var resultado30= montoNum * tasa30/100;
+	  var resultado90= montoNum * tasa90/100;
+	  var resultado360= montoNum * tasa360/100;
+	  
+	  var ganancia30=montoNum+resultado30;
+	  var ganancia90=montoNum+resultado90;
+	  var ganancia360=montoNum+resultado360;
+	  
+	  document.getElementById("t30").innerHTML = '$'+ganancia30.toLocaleString('es-ES', opciones);
+	  document.getElementById("g30").innerHTML = '$'+resultado30.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t90").innerHTML = '$'+ganancia90.toLocaleString('es-ES', opciones);
+	  document.getElementById("g90").innerHTML = '$'+resultado90.toLocaleString('es-ES', opciones);
+	  
+	  document.getElementById("t360").innerHTML = '$'+ganancia360.toLocaleString('es-ES', opciones);
+	  document.getElementById("g360").innerHTML = '$'+resultado360.toLocaleString('es-ES', opciones);
+	  
+}
+
+
+function calcular2(){
+	// Obtener los valores de los elementos HTML
+	  var tasa = document.getElementById("tasa2").value;
+	  var monto = document.getElementById("monto2").value;
+	  var dias = document.getElementById("dias2").value;
+	  
+	  var tasaNum = Number(tasa);
+	  // Convertir el valor de 'monto' a número
+	  var montoNum = Number(monto);
+	  
+	  if(dias==30) tasaNum=tasaNum/12;
+	  else if(dias==90) tasaNum=tasaNum/4;
+
+	  // Realizar el cálculo
+	  var resultado = montoNum * 100 / tasaNum;
+	  var resultadoSuma = montoNum +resultado;
+	  
+	  
+	  var resultadoElem = document.getElementById("resultado2");
+	  resultadoElem.style.display = "block";
+	  
+	  var resultadoTotalElem = document.getElementById("resultadoTotal2");
+	  resultadoTotalElem.innerHTML = '$'+resultado.toLocaleString('es-ES', opciones);
+	  
+	  var desarrolloElem = document.getElementById("desarrollo2");
+	  desarrolloElem.innerHTML = 'Para obtener una ganancia de + $'+montoNum.toLocaleString('es-ES', opciones)+' en '+dias+" dias.";
+	  
+	  
+}
+</script>
 </body>
 </html>
