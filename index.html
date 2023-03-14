@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.futer{
+	position: absolute;
+    bottom: 0px;
+    right: 10%;
+    border: 1px solid;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 0px;
+    padding: 5px;
+    background-color: #bbb;
+    font-weight: 600;
+}
+</style>
 <head>
   <meta charset="UTF-8">
   <title>Calculadora de plazo fijo</title>
@@ -13,13 +26,14 @@
      <meta name="robots" content="index">
 </head>
 <body>
-
+<div class="page-container">
 <!-- Header -->
 <header class="bg-primary py-3 rounded">
   <div class="container d-flex align-items-center">
     <h1 class="text-white">Calculadora de plazo fijo</h1>
   </div>
 </header>
+
 
 <!-- Formulario -->
 <section class="my-5">
@@ -412,6 +426,13 @@
   </div>
 </section>
 
+</div>
+
+<div class="futer">
+lea87crzz @ 2023
+</div>
+
+
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -731,5 +752,6 @@ function calcular4(){
 	  document.getElementById("g12a").innerHTML = '$'+r12.toLocaleString('es-ES', opciones);
 }
 </script>
+
 </body>
 </html>
